@@ -3,11 +3,16 @@
 <suite name="demobabylon Test Suite">
     <listeners>
         <listener
-                class-name="Utilities.CustomListeners" />
+                class-name="utilities.CustomListeners" />
     </listeners>
     <test name="demobabylon Test">
         <classes>
             <class name="BabylonDemoAutomation"></class>
+        </classes>
+    </test>
+    <test name="sugarbox Test">
+        <classes>
+            <class name="TestDemoSugarBox"></class>
         </classes>
     </test>
 </suite>

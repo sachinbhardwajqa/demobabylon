@@ -1,4 +1,4 @@
-package Utilities;
+package utilities;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -53,11 +53,6 @@ public class BaseClass {
         //Invokes browser
         driver = DriverManager.getDriverInstance(property.getProperty("browser"), 30, 10);
         driver.manage().window().maximize();
-
-        //Embed WebDriver listeners into the driver
-        loadPageWithRetry(property.getProperty("url"));
-//        driver.get(property.getProperty("url"));
-
     }
 
     @AfterMethod
@@ -84,7 +79,7 @@ public class BaseClass {
         return className;
     }
 
-    public void loadPageWithRetry(String url) {
+    public static void loadPageWithRetry(String url) {
         int retryCount = 0;
         boolean pageLoaded = false;
         while (!pageLoaded && retryCount < 8) {
@@ -108,5 +103,9 @@ public class BaseClass {
             }
             System.exit(0);
         }
+    }
+
+    public static void openURL(String configProperty){
+        loadPageWithRetry(property.getProperty(configProperty));
     }
 }

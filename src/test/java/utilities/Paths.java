@@ -1,4 +1,4 @@
-package Utilities;
+package utilities;
 
 public class Paths {
     public static final String WEB_DRIVER_CHROMEDRIVER = System.getProperty("user.dir") + "/src/resources/chromedriver";

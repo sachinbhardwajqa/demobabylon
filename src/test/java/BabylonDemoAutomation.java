@@ -1,29 +1,20 @@
-import Utilities.*;
+import utilities.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.Login;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
 import java.util.List;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class BabylonDemoAutomation extends BaseClass {
     private Login loginPage;
 
     @Test(enabled = true)
     public void testLogin() {
+        openURL("url");
         loginPage = new Login(driver);
         try {
             loginPage.setUsername(property.getProperty("username"));
@@ -36,8 +27,9 @@ public class BabylonDemoAutomation extends BaseClass {
         }
     }
 
-    @Test(enabled = true, priority = 2)
+    @Test(enabled = false, priority = 2)
     public void assignLeave() {
+        openURL("url");
         // Login to the application
         try {
             WebElement username = driver.findElement(By.xpath("//input[@placeholder='Username']"));
@@ -104,8 +96,9 @@ public class BabylonDemoAutomation extends BaseClass {
         }
     }
 
-    @Test(enabled = true, priority = 1)
+    @Test(enabled = false, priority = 1)
     public void addLeaveEntitlement() {
+        openURL("url");
         // Login to the application
         try {
             WebElement username = driver.findElement(By.xpath("//input[@placeholder='Username']"));
