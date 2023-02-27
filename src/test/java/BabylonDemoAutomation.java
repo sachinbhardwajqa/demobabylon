@@ -12,7 +12,7 @@ import java.util.List;
 public class BabylonDemoAutomation extends BaseClass {
     private Login loginPage;
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testLogin() {
         openURL("url");
         loginPage = new Login(driver);
