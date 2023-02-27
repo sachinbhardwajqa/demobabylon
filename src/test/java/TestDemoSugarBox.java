@@ -21,10 +21,4 @@ public class TestDemoSugarBox extends BaseClass {
         String message = given().when().get("/pincode/110001").then().extract().jsonPath().getString("Message");
         System.out.println(message);
     }
-
-    @Test(enabled = true)
-    public void testDemoSugarBoxAppium(){
-
-    }
-
 }

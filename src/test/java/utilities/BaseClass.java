@@ -51,8 +51,6 @@ public class BaseClass {
         test.assignCategory("Test_Level_Report");
         testLevelReport.set(test);
         //Invokes browser
-        driver = DriverManager.getDriverInstance(property.getProperty("browser"), 30, 10);
-        driver.manage().window().maximize();
     }
 
     @AfterMethod
@@ -105,7 +103,9 @@ public class BaseClass {
         }
     }
 
-    public static void openURL(String configProperty){
+    public static void openURL(String configProperty) {
+        driver = DriverManager.getDriverInstance(property.getProperty("browser"), 30, 10);
+        driver.manage().window().maximize();
         loadPageWithRetry(property.getProperty(configProperty));
     }
 }
